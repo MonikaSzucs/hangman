@@ -1,0 +1,33 @@
+button {
+  width: 60px;
+  background-color:#C4D5DD;
+  margin:5px;
+}
+
+button:hover{
+  background-color:#9AABB9;
+}
+
+body{
+  background-color: #E8C67D;
+}
+
+#playAgain{
+  width: 200px;
+  height: 50px;
+  background-color:#C4D5DD;
+}
+
+#playAgain:hover{
+  background-color:#9AABB9;
+}
+
+#restart{
+  width: 200px;
+  height: 50px;
+  background-color:#C4D5DD;
+}
+
+#restart:hover{
+  background-color:#9AABB9;
+}
