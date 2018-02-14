@@ -117,9 +117,30 @@ var NumberGuesses = document.getElementById("NumberGuesses");
 
 function numberGuessesMinus() {
   NumberGuesses.innerHTML = (7 - clicks);
+}
+
+var stand = document.getElementsByClassName("stand");
+var headPart = document.getElementById("headPart");
+var bodyPart = document.getElementById("bodyPart");
+var leftArm = document.getElementsByClassName("leftArm");
+var rightarm = document.getElementsByClassName("rightarm");
+var leftLeg = document.getElementsByClassName("leftLeg");
+var rightLeg = document.getElementsByClassName("rightLeg");
+
+headPart.style.display = "none";
+bodyPart.style.display = "none";
+
+function images() {
+  if (clicks === 1) {
+    headPart.style.display = "block";
+  }
+  if (clicks === 2) {
+    bodyPart.style.display = "block";
+  }
 
 
 }
+
 
 id0.addEventListener("click", function() {
   console.log("a");
@@ -133,6 +154,7 @@ id0.addEventListener("click", function() {
     //console.log(wordChosen.match(/i/g));
     if (!wordChosen.match(/a/g)) {
       clicks += 1;
+      images();
       console.log("NONE a found")
     }
   }
@@ -162,6 +184,7 @@ id1.addEventListener("click", function() {
     //console.log(wordChosen.match(/i/g));
     if (!wordChosen.match(/b/g)) {
       clicks += 1;
+      images();
       console.log("NONE b found")
     }
 
@@ -189,6 +212,7 @@ id2.addEventListener("click", function() {
     //console.log(wordChosen.match(/i/g));
     if (!wordChosen.match(/c/g)) {
       clicks += 1;
+      images();
       console.log("NONE c found")
     }
   }
@@ -213,6 +237,7 @@ id3.addEventListener("click", function() {
     }
     if (!wordChosen.match(/d/g)) {
       clicks += 1;
+      images();
       console.log("NONE d found")
     }
 
@@ -238,6 +263,7 @@ id4.addEventListener("click", function() {
     }
     if (!wordChosen.match(/e/g)) {
       clicks += 1;
+      images();
       console.log("NONE e found")
     }
   }
@@ -262,6 +288,7 @@ id5.addEventListener("click", function() {
     }
     if (!wordChosen.match(/f/g)) {
       clicks += 1;
+      images();
       console.log("NONE f found")
     }
 
@@ -285,6 +312,7 @@ id6.addEventListener("click", function() {
     }
     if (!wordChosen.match(/g/g)) {
       clicks += 1;
+      images();
       console.log("NONE g found");
     }
   }
@@ -307,6 +335,7 @@ id7.addEventListener("click", function() {
     }
     if (!wordChosen.match(/h/g)) {
       clicks += 1;
+      images();
       console.log("NONE h found");
     }
 
@@ -330,6 +359,7 @@ id8.addEventListener("click", function() {
     }
     if (!wordChosen.match(/i/g)) {
       clicks += 1;
+      images();
       console.log("NONE i found");
     }
   }
@@ -352,6 +382,7 @@ id9.addEventListener("click", function() {
     }
     if (!wordChosen.match(/j/g)) {
       clicks += 1;
+      images();
       console.log("NONE j found");
     }
   }
@@ -374,6 +405,7 @@ id10.addEventListener("click", function() {
     }
     if (!wordChosen.match(/k/g)) {
       clicks += 1;
+      images();
       console.log("NONE k found");
     }
   }
@@ -395,6 +427,7 @@ id11.addEventListener("click", function() {
     }
     if (!wordChosen.match(/l/g)) {
       clicks += 1;
+      images();
       console.log("NONE l found");
     }
   }
@@ -416,6 +449,7 @@ id12.addEventListener("click", function() {
     }
     if (!wordChosen.match(/m/g)) {
       clicks += 1;
+      images();
       console.log("NONE m found");
     }
   }
@@ -437,6 +471,7 @@ id13.addEventListener("click", function() {
     }
     if (!wordChosen.match(/n/g)) {
       clicks += 1;
+      images();
       console.log("NONE n found");
     }
   }
@@ -458,6 +493,7 @@ id14.addEventListener("click", function() {
     }
     if (!wordChosen.match(/o/g)) {
       clicks += 1;
+      images();
       console.log("NONE o found");
     }
   }
@@ -479,6 +515,7 @@ id15.addEventListener("click", function() {
     }
     if (!wordChosen.match(/p/g)) {
       clicks += 1;
+      images();
       console.log("NONE p found");
     }
   }
@@ -500,6 +537,7 @@ id16.addEventListener("click", function() {
     }
     if (!wordChosen.match(/q/g)) {
       clicks += 1;
+      images();
       console.log("NONE q found");
     }
   }
@@ -521,6 +559,7 @@ id17.addEventListener("click", function() {
     }
     if (!wordChosen.match(/r/g)) {
       clicks += 1;
+      images();
       console.log("NONE r found");
     }
   }
@@ -542,6 +581,7 @@ id18.addEventListener("click", function() {
     }
     if (!wordChosen.match(/s/g)) {
       clicks += 1;
+      images();
       console.log("NONE s found");
     }
     clicks += 1;
@@ -564,6 +604,7 @@ id19.addEventListener("click", function() {
     }
     if (!wordChosen.match(/t/g)) {
       clicks += 1;
+      images();
       console.log("NONE t found");
     }
   }
@@ -585,6 +626,7 @@ id20.addEventListener("click", function() {
     }
     if (!wordChosen.match(/u/g)) {
       clicks += 1;
+      images();
       console.log("NONE u found");
     }
   }
@@ -606,6 +648,7 @@ id21.addEventListener("click", function() {
     }
     if (!wordChosen.match(/v/g)) {
       clicks += 1;
+      images();
       console.log("NONE v found");
     }
   }
@@ -627,6 +670,7 @@ id22.addEventListener("click", function() {
     }
     if (!wordChosen.match(/w/g)) {
       clicks += 1;
+      images();
       console.log("NONE w found");
     }
   }
@@ -648,6 +692,7 @@ id23.addEventListener("click", function() {
     }
     if (!wordChosen.match(/x/g)) {
       clicks += 1;
+      images();
       console.log("NONE x found");
     }
   }
@@ -669,6 +714,7 @@ id24.addEventListener("click", function() {
     }
     if (!wordChosen.match(/y/g)) {
       clicks += 1;
+      images();
       console.log("NONE y found");
     }
   }
@@ -690,6 +736,7 @@ id25.addEventListener("click", function() {
     }
     if (!wordChosen.match(/z/g)) {
       clicks += 1;
+      images();
       console.log("NONE z found");
     }
   }

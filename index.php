@@ -111,6 +111,30 @@ catch(PDOException $e)
     </div>
 
     <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center hangmanArtboard">
+          <div class="alert-message block-message success span6 offset4 hangmanStaticArea">
+            <div class="stand"></div>
+            <div id="headPart"></div>
+            <div id="bodyPart"></div>
+            <div id="leftArm"></div>
+          </div>
+
+
+          <!--
+          <img class="head" src="images/head.svg" alt="stand" width="50" height="50">
+          <img class="bodyPart" src="images/body.svg" alt="stand" width="50" height="50">
+          <img class="leftArm" src="images/leftArm.svg" alt="stand" width="30" height="30">
+          <img class="rightArm" src="images/rightArm.svg" alt="stand" width="30" height="30">
+          <img class="leftLeg" src="images/leftLeg.svg" alt="stand" width="30" height="30">
+          <img class="rightLeg" src="images/rightLeg.svg" alt="stand" width="30" height="30">
+        -->
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
@@ -118,6 +142,7 @@ catch(PDOException $e)
         </div>
         <div class="col-sm-2"></div>
       </div>
+
       <div class="row top-buffer">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center ">

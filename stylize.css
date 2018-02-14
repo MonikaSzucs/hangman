@@ -12,13 +12,13 @@ body{
   background-color: #E8C67D;
 }
 
-#playAgain{
+#playAgain {
   width: 200px;
   height: 50px;
   background-color:#C4D5DD;
 }
 
-#playAgain:hover{
+#playAgain:hover {
   background-color:#9AABB9;
 }
 
@@ -28,6 +28,102 @@ body{
   background-color:#C4D5DD;
 }
 
-#restart:hover{
+#restart:hover {
   background-color:#9AABB9;
+}
+
+.hangmanArtboard {
+  margin: 20px;
+  position: relative;
+  display: block;
+  height: 150px;
+  align-content: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.stand {
+    left: 45%;
+    top: 15%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    width: 150px;
+    height: 150px;
+    background-image: url('images/stand.svg');
+    background-repeat: no-repeat;
+}
+
+.hangmanStaticArea {
+  width: 150px;
+  height: 150px;
+  background-color:red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#headPart{
+  left: 78%;
+  top: 30%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 40px;
+  height: 40px;
+  background-image: url('images/head.svg');
+  background-repeat: no-repeat;
+}
+
+#bodyPart {
+  left: 54%;
+  top: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  background-image: url('images/body.svg');
+  background-repeat: no-repeat;
+}
+
+#leftArm{
+  left: 51%;
+  top: 55%;
+  position: absolute;
+  width: 40px;
+  height: 15px;
+  margin-top: -25px;
+  margin-left: -25px;
+  background-image: url('images/leftArm.svg');
+  background-repeat: no-repeat;
+}
+
+.rightArm{
+  left: 59%;
+  top: 55%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
+  display: none;
+}
+
+.leftLeg{
+  left: 53%;
+  top: 87%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
+  display: none;
+}
+
+.rightLeg{
+  left: 58%;
+  top: 87%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
+  display: none;
 }
