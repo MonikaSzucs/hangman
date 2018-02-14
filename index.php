@@ -84,7 +84,7 @@ catch(PDOException $e)
 <div id="FirstPage"> <!-- First Page  -->
   <div id="playContainer">
     <div class="jumbotron text-center">
-      <h1>Hangman</h1>
+      <div id="MainTitle">Hangman</div>
       <p>by Monika Szucs</p>
 
 
@@ -102,12 +102,12 @@ catch(PDOException $e)
   <!-- Playing Container Area -->
   <div id="playContainer">
     <div class="jumbotron text-center">
-      <h1>Hangman</h1>
+      <div id="MainTitle">Hangman</div>
       <p>by Monika Szucs</p>
       <p>Hi <span id="PlayerName"></span></p>
-      <div>
+      <h3>
         Number of Guesses left: <span id="NumberGuesses"></span>
-      </div>
+      </h3>
     </div>
 
     <div class="container">
@@ -116,25 +116,20 @@ catch(PDOException $e)
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center hangmanArtboard">
           <div class="alert-message block-message success span6 offset4 hangmanStaticArea">
-            <div class="stand"></div>
+            <div id="stand"></div>
             <div id="headPart"></div>
             <div id="bodyPart"></div>
             <div id="leftArm"></div>
+            <div id="rightArm"></div>
+            <div id="leftLeg"></div>
+            <div id="rightLeg"></div>
           </div>
 
-
-          <!--
-          <img class="head" src="images/head.svg" alt="stand" width="50" height="50">
-          <img class="bodyPart" src="images/body.svg" alt="stand" width="50" height="50">
-          <img class="leftArm" src="images/leftArm.svg" alt="stand" width="30" height="30">
-          <img class="rightArm" src="images/rightArm.svg" alt="stand" width="30" height="30">
-          <img class="leftLeg" src="images/leftLeg.svg" alt="stand" width="30" height="30">
-          <img class="rightLeg" src="images/rightLeg.svg" alt="stand" width="30" height="30">
-        -->
         </div>
         <div class="col-sm-2"></div>
       </div>
 
+    <span id="letterGuessingArea">
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
@@ -147,10 +142,11 @@ catch(PDOException $e)
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center ">
           <p>Word Guess: <input type="text" name="typedWordGuess" id="typedWordGuess">
-            <button id="submitTypedWordGuess" >Submit</button><br></p>
+            <button id="submitTypedWordGuess" >Submit</button><span id="WordGuessWrong"></span><br></p>
         </div>
         <div class="col-sm-2"></div>
       </div>
+
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
@@ -159,6 +155,8 @@ catch(PDOException $e)
         </div>
         <div class="col-sm-2"></div>
       </div>
+    </span>
+
     </div>
   </div> <!-- End of Second Page  -->
 
@@ -167,7 +165,7 @@ catch(PDOException $e)
     <div class="jumbotron text-center">
       <h1>Game Over!</h1>
       <h2 id="word2"></h2>
-      <span id="definition2"></span>
+      <div id="definition2"></div>
       <button id="playAgain">Play again</button>
     </div>
   </div> <!-- End of Game Over Page  -->
@@ -177,17 +175,9 @@ catch(PDOException $e)
   <div id="winnerContainer"> <!-- Winner Page  -->
     <div class="jumbotron text-center">
       <h1>You Win!</h1>
+      <h2 id="word"></h2>
+      <div id="definition"></div>
       <button id="restart">Play again</button>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center">
-          <h2 id="word"></h2>
-          <span id="definition"></span>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
     </div>
   </div> <!-- End of Winner Page  -->
 </div>

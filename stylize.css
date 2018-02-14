@@ -41,9 +41,10 @@ body{
   left: 0;
   right: 0;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-.stand {
+#stand {
     left: 45%;
     top: 15%;
     position: absolute;
@@ -58,7 +59,6 @@ body{
 .hangmanStaticArea {
   width: 150px;
   height: 150px;
-  background-color:red;
   position: absolute;
   left: 0;
   right: 0;
@@ -78,8 +78,8 @@ body{
 }
 
 #bodyPart {
-  left: 54%;
-  top: 50%;
+  left: 88%;
+  top: 52%;
   position: absolute;
   width: 50px;
   height: 50px;
@@ -90,7 +90,7 @@ body{
 }
 
 #leftArm{
-  left: 51%;
+  left: 75%;
   top: 55%;
   position: absolute;
   width: 40px;
@@ -101,29 +101,43 @@ body{
   background-repeat: no-repeat;
 }
 
-.rightArm{
-  left: 59%;
+#rightArm{
+  left: 89%;
   top: 55%;
   position: absolute;
   margin-top: -25px;
   margin-left: -25px;
-  display: none;
+  width: 40px;
+  height: 15px;
+  background-image: url('images/rightArm.svg');
+  background-repeat: no-repeat;
 }
 
-.leftLeg{
-  left: 53%;
-  top: 87%;
+#leftLeg{
+  left: 76%;
+  top: 81%;
   position: absolute;
   margin-top: -25px;
   margin-left: -25px;
-  display: none;
+  width: 25px;
+  height: 60px;
+  background-image: url('images/leftLeg.svg');
+  background-repeat: no-repeat;
 }
 
-.rightLeg{
-  left: 58%;
-  top: 87%;
+#rightLeg{
+  left: 89%;
+  top: 81%;
   position: absolute;
   margin-top: -25px;
   margin-left: -25px;
-  display: none;
+  width: 20px;
+  height: 50px;
+  background-image: url('images/rightLeg.svg');
+  background-repeat: no-repeat;
+}
+
+#MainTitle {
+  font-size: 35px;
+  font-weight: bolder;
 }

@@ -85,6 +85,12 @@ var restart = document.getElementById("restart");
 var word = document.getElementById("word");
 var definition = document.getElementById("definition");
 
+var word2 = document.getElementById("word2");
+var definiton2 = document.getElementById("definiton2");
+
+var letterGuessingArea = document.getElementById("letterGuessingArea");
+var WordGuessWrong = document.getElementById("WordGuessWrong");
+
 submitTypedWordGuess.addEventListener("click", function() {
   console.log(typedWordGuess.value.toLowerCase());
   console.log(wordChosen);
@@ -96,9 +102,13 @@ submitTypedWordGuess.addEventListener("click", function() {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "none";
     winnerContainer.style.display = "block";
-
+    letterGuessingArea.style.display = "none";
 
     updateScore();
+
+  } else {
+    updateScore();
+    WordGuessWrong.innerHTML = "Guess Again!";
   }
 
 })
@@ -114,28 +124,45 @@ restart.addEventListener("click", function() {
 })
 
 var NumberGuesses = document.getElementById("NumberGuesses");
+NumberGuesses.innerHTML = 7;
 
 function numberGuessesMinus() {
   NumberGuesses.innerHTML = (7 - clicks);
 }
 
-var stand = document.getElementsByClassName("stand");
+var stand = document.getElementById("stand");
 var headPart = document.getElementById("headPart");
 var bodyPart = document.getElementById("bodyPart");
-var leftArm = document.getElementsByClassName("leftArm");
-var rightarm = document.getElementsByClassName("rightarm");
-var leftLeg = document.getElementsByClassName("leftLeg");
-var rightLeg = document.getElementsByClassName("rightLeg");
+var leftArm = document.getElementById("leftArm");
+var rightArm = document.getElementById("rightArm");
+var leftLeg = document.getElementById("leftLeg");
+var rightLeg = document.getElementById("rightLeg");
 
+
+stand.style.display = "none";
 headPart.style.display = "none";
 bodyPart.style.display = "none";
+leftArm.style.display = "none";
+rightArm.style.display = "none";
+leftLeg.style.display = "none";
+rightLeg.style.display = "none";
 
 function images() {
   if (clicks === 1) {
+    stand.style.display = "block";
+  } else if (clicks === 2) {
     headPart.style.display = "block";
-  }
-  if (clicks === 2) {
+  } else if (clicks === 3) {
     bodyPart.style.display = "block";
+  } else if (clicks === 4) {
+    leftArm.style.display = "block";
+  } else if (clicks === 5) {
+    rightArm.style.display = "block";
+  } else if (clicks === 6) {
+    leftLeg.style.display = "block";
+  } else if (clicks === 7) {
+    rightLeg.style.display = "block";
+    letterGuessingArea.style.display = "none"
   }
 
 
@@ -162,8 +189,8 @@ id0.addEventListener("click", function() {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
 
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
 
     updateScore();
   }
@@ -192,8 +219,8 @@ id1.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -219,8 +246,8 @@ id2.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -245,8 +272,8 @@ id3.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -270,8 +297,8 @@ id4.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -296,6 +323,8 @@ id5.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -319,6 +348,8 @@ id6.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -343,6 +374,8 @@ id7.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -366,6 +399,8 @@ id8.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -389,6 +424,8 @@ id9.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
     updateScore();
   }
   console.log(clicks);
@@ -412,6 +449,8 @@ id10.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -434,6 +473,8 @@ id11.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -456,6 +497,8 @@ id12.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -478,6 +521,8 @@ id13.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -500,6 +545,8 @@ id14.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -522,6 +569,8 @@ id15.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -544,6 +593,8 @@ id16.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -566,6 +617,8 @@ id17.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -589,6 +642,8 @@ id18.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -611,6 +666,8 @@ id19.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -633,6 +690,8 @@ id20.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -655,6 +714,8 @@ id21.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -677,6 +738,8 @@ id22.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -699,6 +762,8 @@ id23.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -721,6 +786,8 @@ id24.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -743,6 +810,8 @@ id25.addEventListener("click", function() {
   if (clicks >= 7) {
     playContainer.style.display = "none";
     gameOverContainer.style.display = "block";
+    word2.innerHTML = wordChosen;
+    definition2.innerHTML = wordDefintion;
   }
   console.log(clicks);
   console.log(7 - clicks);
