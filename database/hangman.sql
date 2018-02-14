@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2018 at 07:50 AM
+-- Generation Time: Feb 14, 2018 at 07:07 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -34,15 +34,6 @@ CREATE TABLE `player` (
   `score` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `player`
---
-
-INSERT INTO `player` (`id`, `name`, `score`) VALUES
-(61, 'nnnnnn', 11),
-(62, 'nnnnn', 11),
-(63, '11111', 11);
-
 -- --------------------------------------------------------
 
 --
@@ -54,15 +45,6 @@ CREATE TABLE `word_guessed` (
   `word` varchar(250) NOT NULL,
   `definition` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `word_guessed`
---
-
-INSERT INTO `word_guessed` (`id`, `word`, `definition`) VALUES
-(61, 'saorsa', 'the wall of a room or of a garden'),
-(62, 'alcoved', 'relating to electricity produced by chemical action in battery'),
-(63, 'elution', 'the wall of a room or of a garden');
 
 --
 -- Indexes for dumped tables
@@ -89,7 +71,7 @@ ALTER TABLE `word_guessed`
 -- AUTO_INCREMENT for table `player`
 --
 ALTER TABLE `player`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- Constraints for dumped tables
 --
