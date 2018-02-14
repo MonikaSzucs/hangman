@@ -15,7 +15,7 @@ $dbname = "db722005311";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
      if ($conn){
-       echo"connected";
+       //echo"connected";
      }
      if ($conn === false)
     // set the PDO error mode to exception
@@ -88,7 +88,17 @@ catch(PDOException $e)
       <p>by Monika Szucs</p>
 
 
-      <span>Please enter in your name:</span>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center hangmanArtboard">
+          <div class="alert-message block-message success span6 offset4 hangmanStaticArea">
+            <div id="HangmanWhole"></div>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+    Please enter in your <span class="subTitles">name:</span>
         <input id="TypedPlayerName" type="text" name="name"/><br/>
         <button name="submit" onclick="enterGame()" >Enter</button>
 
@@ -105,9 +115,9 @@ catch(PDOException $e)
       <div id="MainTitle">Hangman</div>
       <p>by Monika Szucs</p>
       <p>Hi <span id="PlayerName"></span></p>
-      <h3>
+      <div id="MainTitle">
         Number of Guesses left: <span id="NumberGuesses"></span>
-      </h3>
+      </div>
     </div>
 
     <div class="container">
@@ -141,16 +151,16 @@ catch(PDOException $e)
       <div class="row top-buffer">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center ">
-          <p>Word Guess: <input type="text" name="typedWordGuess" id="typedWordGuess">
-            <button id="submitTypedWordGuess" >Submit</button><span id="WordGuessWrong"></span><br></p>
+          <span class="subTitles">Word Guess:</span> <input type="text" name="typedWordGuess" id="typedWordGuess">
+            <button id="submitTypedWordGuess" >Submit</button><span id="WordGuessWrong"></span><br>
         </div>
         <div class="col-sm-2"></div>
       </div>
-
+      <hr/>
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
-          Letter Guess:
+          <span class="subTitles">Letter Guess:</span>
           <p id="wordGuessArea"></p>
         </div>
         <div class="col-sm-2"></div>

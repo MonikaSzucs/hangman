@@ -91,25 +91,68 @@ var definiton2 = document.getElementById("definiton2");
 var letterGuessingArea = document.getElementById("letterGuessingArea");
 var WordGuessWrong = document.getElementById("WordGuessWrong");
 
+
+var stand = document.getElementById("stand");
+var headPart = document.getElementById("headPart");
+var bodyPart = document.getElementById("bodyPart");
+var leftArm = document.getElementById("leftArm");
+var rightArm = document.getElementById("rightArm");
+var leftLeg = document.getElementById("leftLeg");
+var rightLeg = document.getElementById("rightLeg");
+
+
+stand.style.display = "none";
+headPart.style.display = "none";
+bodyPart.style.display = "none";
+leftArm.style.display = "none";
+rightArm.style.display = "none";
+leftLeg.style.display = "none";
+rightLeg.style.display = "none";
+
+
+
 submitTypedWordGuess.addEventListener("click", function() {
   console.log(typedWordGuess.value.toLowerCase());
   console.log(wordChosen);
-  if (wordChosen === typedWordGuess.value.toLowerCase()) {
+  console.log(typedWordGuess.value.length);
+  if (typedWordGuess.value.length > 0) {
+    if (wordChosen === typedWordGuess.value.toLowerCase()) {
 
-    word.innerHTML = wordChosen;
-    definition.innerHTML = wordDefintion;
+      word.innerHTML = wordChosen;
+      definition.innerHTML = wordDefintion;
 
-    playContainer.style.display = "none";
-    gameOverContainer.style.display = "none";
-    winnerContainer.style.display = "block";
-    letterGuessingArea.style.display = "none";
+      playContainer.style.display = "none";
+      gameOverContainer.style.display = "none";
+      winnerContainer.style.display = "block";
+      letterGuessingArea.style.display = "none";
 
-    updateScore();
+      updateScore();
 
+    } else {
+      updateScore();
+      clicks += 1;
+      console.log("clicks " + clicks)
+      numberGuessesMinus();
+      images()
+      WordGuessWrong.innerHTML = "Guess Again!";
+
+      console.log("Over " + clicks)
+      if (clicks >= 7) {
+
+        console.log("7 guesses");
+        letterGuessingArea.style.display = "none";
+        gameOverContainer.style.display = "block";
+
+        word2.innerHTML = wordChosen;
+        definition2.innerHTML = wordDefintion;
+
+      }
+
+    }
   } else {
-    updateScore();
-    WordGuessWrong.innerHTML = "Guess Again!";
+    WordGuessWrong.innerHTML = "Must type something!";
   }
+
 
 })
 
@@ -130,22 +173,6 @@ function numberGuessesMinus() {
   NumberGuesses.innerHTML = (7 - clicks);
 }
 
-var stand = document.getElementById("stand");
-var headPart = document.getElementById("headPart");
-var bodyPart = document.getElementById("bodyPart");
-var leftArm = document.getElementById("leftArm");
-var rightArm = document.getElementById("rightArm");
-var leftLeg = document.getElementById("leftLeg");
-var rightLeg = document.getElementById("rightLeg");
-
-
-stand.style.display = "none";
-headPart.style.display = "none";
-bodyPart.style.display = "none";
-leftArm.style.display = "none";
-rightArm.style.display = "none";
-leftLeg.style.display = "none";
-rightLeg.style.display = "none";
 
 function images() {
   if (clicks === 1) {
@@ -165,12 +192,16 @@ function images() {
     letterGuessingArea.style.display = "none"
   }
 
-
 }
+
+
 
 
 id0.addEventListener("click", function() {
   console.log("a");
+  id0.style.backgroundColor = "#A9A9A9";
+  id0.style.border = "none";
+
   if (!id0.disabled && clicks < 7) {
     id0.disabled = 'disabled';
     for (var i = 0; i < wordChosen.length; i++) {
@@ -193,6 +224,8 @@ id0.addEventListener("click", function() {
     definition2.innerHTML = wordDefintion;
 
     updateScore();
+
+
   }
   console.log(clicks);
   console.log(7 - clicks);
@@ -200,6 +233,8 @@ id0.addEventListener("click", function() {
 })
 
 id1.addEventListener("click", function() {
+  id1.style.backgroundColor = "#A9A9A9";
+  id1.style.border = "none";
   console.log("b");
   if (!id1.disabled && clicks < 7) {
     id1.disabled = 'disabled';
@@ -229,6 +264,8 @@ id1.addEventListener("click", function() {
 })
 
 id2.addEventListener("click", function() {
+  id2.style.backgroundColor = "#A9A9A9";
+  id2.style.border = "none";
   console.log("c");
   if (!id2.disabled && clicks < 7) {
     id2.disabled = 'disabled';
@@ -256,6 +293,8 @@ id2.addEventListener("click", function() {
 })
 
 id3.addEventListener("click", function() {
+  id3.style.backgroundColor = "#A9A9A9";
+  id3.style.border = "none";
   console.log("d");
   if (!id3.disabled && clicks < 7) {
     id3.disabled = 'disabled';
@@ -282,6 +321,8 @@ id3.addEventListener("click", function() {
 })
 
 id4.addEventListener("click", function() {
+  id4.style.backgroundColor = "#A9A9A9";
+  id4.style.border = "none";
   console.log("e");
   if (!id4.disabled && clicks < 7) {
     id4.disabled = 'disabled';
@@ -307,6 +348,8 @@ id4.addEventListener("click", function() {
 })
 
 id5.addEventListener("click", function() {
+  id5.style.backgroundColor = "#A9A9A9";
+  id5.style.border = "none";
   console.log("f");
   if (!id5.disabled && clicks < 7) {
     id5.disabled = 'disabled';
@@ -333,6 +376,8 @@ id5.addEventListener("click", function() {
 })
 
 id6.addEventListener("click", function() {
+  id6.style.backgroundColor = "#A9A9A9";
+  id6.style.border = "none";
   console.log("g");
   if (!id6.disabled && clicks < 7) {
     id6.disabled = 'disabled';
@@ -358,6 +403,8 @@ id6.addEventListener("click", function() {
 })
 
 id7.addEventListener("click", function() {
+  id7.style.backgroundColor = "#A9A9A9";
+  id7.style.border = "none";
   console.log("h");
   if (!id7.disabled && clicks < 7) {
     id7.disabled = 'disabled';
@@ -384,6 +431,8 @@ id7.addEventListener("click", function() {
 })
 
 id8.addEventListener("click", function() {
+  id8.style.backgroundColor = "#A9A9A9";
+  id8.style.border = "none";
   console.log("i");
   if (!id8.disabled && clicks < 7) {
     id8.disabled = 'disabled';
@@ -409,6 +458,8 @@ id8.addEventListener("click", function() {
 })
 
 id9.addEventListener("click", function() {
+  id9.style.backgroundColor = "#A9A9A9";
+  id9.style.border = "none";
   console.log("j");
   if (!id9.disabled && clicks < 7) {
     id9.disabled = 'disabled';
@@ -434,6 +485,8 @@ id9.addEventListener("click", function() {
 })
 
 id10.addEventListener("click", function() {
+  id10.style.backgroundColor = "#A9A9A9";
+  id10.style.border = "none";
   console.log("k");
   if (!id10.disabled && clicks < 7) {
     id10.disabled = 'disabled';
@@ -458,6 +511,8 @@ id10.addEventListener("click", function() {
 })
 
 id11.addEventListener("click", function() {
+  id11.style.backgroundColor = "#A9A9A9";
+  id11.style.border = "none";
   console.log("l");
   if (!id11.disabled && clicks < 7) {
     id11.disabled = 'disabled';
@@ -482,6 +537,8 @@ id11.addEventListener("click", function() {
 })
 
 id12.addEventListener("click", function() {
+  id12.style.backgroundColor = "#A9A9A9";
+  id12.style.border = "none";
   console.log("m");
   if (!id12.disabled && clicks < 7) {
     id12.disabled = 'disabled';
@@ -506,6 +563,8 @@ id12.addEventListener("click", function() {
 })
 
 id13.addEventListener("click", function() {
+  id13.style.backgroundColor = "#A9A9A9";
+  id13.style.border = "none";
   console.log("n");
   if (!id13.disabled && clicks < 7) {
     id13.disabled = 'disabled';
@@ -530,6 +589,8 @@ id13.addEventListener("click", function() {
 })
 
 id14.addEventListener("click", function() {
+  id14.style.backgroundColor = "#A9A9A9";
+  id14.style.border = "none";
   console.log("o");
   if (!id14.disabled && clicks < 7) {
     id14.disabled = 'disabled';
@@ -554,6 +615,8 @@ id14.addEventListener("click", function() {
 })
 
 id15.addEventListener("click", function() {
+  id15.style.backgroundColor = "#A9A9A9";
+  id15.style.border = "none";
   console.log("p");
   if (!id15.disabled && clicks < 7) {
     id15.disabled = 'disabled';
@@ -578,6 +641,8 @@ id15.addEventListener("click", function() {
 })
 
 id16.addEventListener("click", function() {
+  id16.style.backgroundColor = "#A9A9A9";
+  id16.style.border = "none";
   console.log("q");
   if (!id16.disabled && clicks < 7) {
     id16.disabled = 'disabled';
@@ -602,6 +667,8 @@ id16.addEventListener("click", function() {
 })
 
 id17.addEventListener("click", function() {
+  id17.style.backgroundColor = "#A9A9A9";
+  id17.style.border = "none";
   console.log("r");
   if (!id17.disabled && clicks < 7) {
     id17.disabled = 'disabled';
@@ -626,6 +693,8 @@ id17.addEventListener("click", function() {
 })
 
 id18.addEventListener("click", function() {
+  id18.style.backgroundColor = "#A9A9A9";
+  id18.style.border = "none";
   console.log("s");
   if (!id18.disabled && clicks < 7) {
     id18.disabled = 'disabled';
@@ -651,6 +720,8 @@ id18.addEventListener("click", function() {
 })
 
 id19.addEventListener("click", function() {
+  id19.style.backgroundColor = "#A9A9A9";
+  id19.style.border = "none";
   console.log("t");
   if (!id19.disabled && clicks < 7) {
     id19.disabled = 'disabled';
@@ -675,6 +746,8 @@ id19.addEventListener("click", function() {
 })
 
 id20.addEventListener("click", function() {
+  id20.style.backgroundColor = "#A9A9A9";
+  id20.style.border = "none";
   console.log("u");
   if (!id20.disabled && clicks < 7) {
     id20.disabled = 'disabled';
@@ -699,6 +772,8 @@ id20.addEventListener("click", function() {
 })
 
 id21.addEventListener("click", function() {
+  id21.style.backgroundColor = "#A9A9A9";
+  id21.style.border = "none";
   console.log("v");
   if (!id21.disabled && clicks < 7) {
     id21.disabled = 'disabled';
@@ -723,6 +798,8 @@ id21.addEventListener("click", function() {
 })
 
 id22.addEventListener("click", function() {
+  id22.style.backgroundColor = "#A9A9A9";
+  id22.style.border = "none";
   console.log("w");
   if (!id22.disabled && clicks < 7) {
     id22.disabled = 'disabled';
@@ -747,6 +824,8 @@ id22.addEventListener("click", function() {
 })
 
 id23.addEventListener("click", function() {
+  id23.style.backgroundColor = "#A9A9A9";
+  id23.style.border = "none";
   console.log("x");
   if (!id23.disabled && clicks < 7) {
     id23.disabled = 'disabled';
@@ -771,6 +850,8 @@ id23.addEventListener("click", function() {
 })
 
 id24.addEventListener("click", function() {
+  id24.style.backgroundColor = "#A9A9A9";
+  id24.style.border = "none";
   console.log("y");
   if (!id24.disabled && clicks < 7) {
     id24.disabled = 'disabled';
@@ -795,6 +876,8 @@ id24.addEventListener("click", function() {
 })
 
 id25.addEventListener("click", function() {
+  id25.style.backgroundColor = "#A9A9A9";
+  id25.style.border = "none";
   console.log("z");
   if (!id25.disabled && clicks < 7) {
     id25.disabled = 'disabled';

@@ -141,3 +141,35 @@ body{
   font-size: 35px;
   font-weight: bolder;
 }
+
+#WordGuessWrong{
+  color: red;
+}
+
+.subTitles{
+  font-weight: bold;
+}
+
+#HangmanWhole{
+  left: 90%;
+  top: 21%;
+  margin-top: 0px;
+  margin-left: 30px;
+  width: 150px;
+  height: 150px;
+  background-image: url('images/HangmanWhole.svg');
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 700px) {
+  #MainTitle {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+
+}
