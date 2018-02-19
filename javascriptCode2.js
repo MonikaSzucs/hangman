@@ -1,30 +1,38 @@
-//array storage area
-var words = ["foltfic", "subjoin", "alcoved", "aliquot", "elution",
-  "frijole", "hyaline", "kalopsia", "lacuna", "saorsa"
-]
-var definitions = ["relating to electricity produced by chemical action in battery",
-  "add information at the end of a speech or text.", "the wall of a room or of a garden",
-  "a portion of a larger whole",
-  "the process of extracting one material from another by washing with a solvent",
-  "beans", "having glassy, translucent appearance",
-  "the delusion of things being more beutiful than they really are", "a blank space",
-  "freedom,liberty"
-]
-var letters = [
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-  "u", "v", "w", "x", "y", "z"
-];
+function func(wordChosen) {
+  console.log("My val " + wordChosen);
+  var wordChosen = wordChosen;
+};
 
-//grab button area
-var buttons = document.getElementById("buttons");
+function func2(wordDefinition) {
+  console.log("My def " + wordDefinition);
+  var wordDefinition = wordDefinition;
+};
 
-//chosing a word in the list
-var wordChosen = words[Math.floor(Math.random() * 10)];
-console.log(wordChosen);
-//defintion of that word chosen
-var wordDefintion = definitions[Math.floor(Math.random() * 10)];
-console.log(wordDefintion);
+
+//console.log("THEEE WORD " + wordChosen);
+//console.log("THEE DEFINTION " + wordDefinition);
+var nameNeeded = document.getElementById("nameNeeded");
+
+function enterGame() {
+
+  if (TypedPlayerName.value.length) {
+    FirstPage.style.display = "none";
+    SecondPage.style.display = "block";
+    PlayerName.innerHTML = TypedPlayerName.value;
+  } else {
+    nameNeeded.innerHTML = "Please enter your name!";
+    nameNeeded.style.color = "red";
+  }
+  //FirstPage.style.display = "none";
+  //SecondPage.style.display = "block";
+  console.log(TypedPlayerName.value.length);
+  //PlayerName.innerHTML = TypedPlayerName.value;
+};
+
+var FirstPage = document.getElementById("FirstPage");
+var SecondPage = document.getElementById("SecondPage");
+FirstPage.style.display = "block";
+SecondPage.style.display = "none";
 
 var playContainer = document.getElementById("playContainer");
 var gameOverContainer = document.getElementById("gameOverContainer");
@@ -33,24 +41,17 @@ playContainer.style.display = "block";
 gameOverContainer.style.display = "none";
 winnerContainer.style.display = "none";
 
-var typedWordGuess = document.getElementById("typedWordGuess");
-var submitTypedWordGuess = document.getElementById("submitTypedWordGuess");
+var letters = [
+  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+  "u", "v", "w", "x", "y", "z"
+];
 
-var FirstPage = document.getElementById("FirstPage");
-var SecondPage = document.getElementById("SecondPage");
-FirstPage.style.display = "block";
-SecondPage.style.display = "none";
+
+//grab button area
+var buttons = document.getElementById("buttons");
 
 var TypedPlayerName = document.getElementById("TypedPlayerName");
-
-
-
-function enterGame() {
-  FirstPage.style.display = "none";
-  SecondPage.style.display = "block";
-  console.log(TypedPlayerName.value);
-  PlayerName.innerHTML = TypedPlayerName.value;
-}
 
 for (i = 0; i < wordChosen.length; i++) {
   var box = document.createElement("SPAN");
@@ -157,9 +158,24 @@ submitTypedWordGuess.addEventListener("click", function() {
 
 })
 
+myStorage = window.localStorage;
+localStorage.setItem('myCat', 'Tom');
+
 playAgain.addEventListener("click", function() {
-  window.location.reload();
+  //window.location.reload();
   console.log("PLAY AGAIN");
+  console.log(myStorage);
+  imagesReset();
+  //document.getElementById("enterGame").click();
+  console.log(TypedPlayerName.value);
+  PlayerName.innerHTML = TypedPlayerName.value;
+  FirstPage.style.display = "none";
+  SecondPage.style.display = "block";
+
+  playContainer.style.display = "block";
+  gameOverContainer.style.display = "none";
+  winnerContainer.style.display = "none";
+  letterGuessingArea.style.display = "block";
 })
 
 restart.addEventListener("click", function() {
@@ -174,6 +190,16 @@ function numberGuessesMinus() {
   NumberGuesses.innerHTML = (7 - clicks);
 }
 
+
+function imagesReset() {
+  stand.style.display = "none";
+  headPart.style.display = "none";
+  bodyPart.style.display = "none";
+  leftArm.style.display = "none";
+  rightArm.style.display = "none";
+  leftLeg.style.display = "none";
+  rightLeg.style.display = "none";
+}
 
 function images() {
   if (clicks === 1) {
