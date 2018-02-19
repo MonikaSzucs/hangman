@@ -29,9 +29,9 @@ catch(PDOException $e)
 
 
 
-if (isset($_POST['submit'])){
+if (isset($_GET['submit'])){
     session_start ();
-    echo $_POST['name'];
+    echo $_GET['name'];
 }
     // Start the session
     //session_start ();

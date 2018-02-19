@@ -29,10 +29,12 @@ catch(PDOException $e)
 
 
 
-if (isset($_POST['submit'])){
-    session_start ();
-    echo $_POST['name'];
-}
+    //the session_start() should always be at the top
+    session_start();
+    //this is to make sure people can't access the pages unless they log in
+    if(!isset($_SESSION["player_id"])){
+
+    }
     // Start the session
     //session_start ();
 
