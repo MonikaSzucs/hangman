@@ -9,13 +9,45 @@ $servername = "db722005311.db.1and1.com";
 $username = "dbo722005311";
 $password = "Super101";
 $dbname = "db722005311";
+
+
 */
+$score = 0;
+$name = "";
+
+if(isset($_POST['name']))
+{
+  $name = $_POST['name'];
+
+}
+
+if (isset($_POST['score'])) {
+   //echo "Your firstname is " . $_POST['score'] . "<br>";
+
+   $score = $_POST["score"];
+ } else {
+    //echo "Your score is " . $score . "<br>";
+ }
 
 //Connecting to the database
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
      if ($conn){
        //echo"connected";
+
+
+
+       //page2.php?name=newww&playagain=true
+       $query = "SELECT * FROM words_available";
+       $words = array();
+       $sth = $conn->query($query);
+       while( $row = $sth->fetch(PDO::FETCH_ASSOC) ) {
+         $words[] = $row; // appends each row to the array
+       }
+
+
+       $pos = rand(0,count($words)-1);
+
      }
      if ($conn === false)
     // set the PDO error mode to exception
@@ -29,12 +61,7 @@ catch(PDOException $e)
 
 
 
-    //the session_start() should always be at the top
-    session_start();
-    //this is to make sure people can't access the pages unless they log in
-    if(!isset($_SESSION["player_id"])){
 
-    }
     // Start the session
     //session_start ();
 
@@ -68,39 +95,6 @@ catch(PDOException $e)
 </head>
 <body>
 
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hangman2";
-
-
-  ////connect to the database
-  $conn2 = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-  $query = "SELECT * FROM words_available";
-  $words = array();
-  $sth = $conn2->query($query);
-  while( $row = $sth->fetch(PDO::FETCH_ASSOC) ) {
-    $words[] = $row; // appends each row to the array
-  }
-
-/*
-  echo "<pre>";
-  print_r($words);
-  echo "</pre>";
-*/
-  //var_dump(count($words));
-  ///echo(rand(0,count($words)));
-
-  $pos = rand(0,count($words));
-  //echo $pos;
-////  echo $words[$pos]['word'];
-?>
-
-
-<script src="javascriptCode2.js"></script>
 <script>
 
 //chosing a word in the list
@@ -108,14 +102,23 @@ var wordChosen = '<?php echo $words[$pos]['word']; ?>';
 console.log(wordChosen);
 //defintion of that word chosen
 var wordDefintion = '<?php echo $words[$pos]['definiton']; ?>';
-console.log(wordDefintion);
+//console.log(wordDefintion);
+function func(wordChosen) {
+  //console.log("My val " + wordChosen);
+  var wordChosen = wordChosen;
+};
 
+function func2(wordDefinition) {
+  //console.log("My def " + wordDefinition);
+  var wordDefinition = wordDefinition;
+};
 func(wordChosen);
 func2(wordDefintion);
 
 
 
       function updateScore() {
+        console.log("UPDATE THIS SCORE");
         //Thi Ajax section transfers the name and score that is given to be sent
         //to another files called updateDB.php which will then be able to update
         //and insert in to the database
@@ -125,8 +128,10 @@ func2(wordDefintion);
           type: 'POST',
           dataType: "json",
           data: {
-            name: $('#TypedPlayerName').val(),
-            //word: $('#word').text(),
+            name: $('#playAgain').val(),
+            myScore: $('#myScore').val(),
+            //score: $('#')
+            ////word: $('#word').text(),
           ///  definition: $('#definition').text()
 
 
@@ -152,14 +157,18 @@ func2(wordDefintion);
 
 </script>
 
-
 <div id="SecondPage"> <!-- Second Page  -->
   <!-- Playing Container Area -->
   <div id="playContainer">
     <div class="jumbotron text-center">
       <div id="MainTitle">Hangman</div>
       <p>by Monika Szucs</p>
-      <p>Hi <span id="PlayerName"></span></p>
+      <p>Hi <span id="PlayerName">
+        <?php
+        echo $name;
+
+         ?>
+      </span></p>
       <div id="MainTitle">
         Number of Guesses left: <span id="NumberGuesses"></span>
       </div>
@@ -224,7 +233,17 @@ func2(wordDefintion);
       <h1>Game Over!</h1>
       <h2 id="word2"></h2>
       <div id="definition2"></div>
-      <button id="playAgain">Play again</button>
+
+
+      <form method="post" action="http://localhost/hangmanFeb19/hangman/page2.php" class="inline">
+        <input  id="myScore" type="hidden" name="score" value="<?php echo $score?>">
+        <button onclick="updateScore2(); updateScore()" id="playAgain" type="submit" name="name" value="<?php echo $name?>" class="link-button">
+          Play Again
+        </button>
+      </form>
+
+
+
     </div>
   </div> <!-- End of Game Over Page  -->
 
@@ -235,11 +254,18 @@ func2(wordDefintion);
       <h1>You Win!</h1>
       <h2 id="word"></h2>
       <div id="definition"></div>
-      <button id="restart">Play again</button>
+
+      <form method="post" action="http://localhost/hangmanFeb19/hangman/page2.php" class="inline">
+        <input  id="myScore2" type="hidden" name="score" value="<?php echo $score?>">
+        <button onclick="updateScore2(); updateScore()" id="restart" type="submit" name="name" value="<?php echo $name?>" class="link-button">
+          Play Again
+        </button>
+      </form>
+
     </div>
   </div> <!-- End of Winner Page  -->
 </div>
 
-<script src="javascriptCode2.js"></script>
+<script src="javascriptCode3.js"></script>
 </body>
 </html>

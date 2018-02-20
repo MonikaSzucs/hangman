@@ -29,10 +29,6 @@ catch(PDOException $e)
 
 
 
-if (isset($_GET['submit'])){
-    session_start ();
-    echo $_GET['name'];
-}
     // Start the session
     //session_start ();
 
@@ -62,7 +58,7 @@ if (isset($_GET['submit'])){
   <link rel="stylesheet" type="text/css" href="stylize.css">
   <script src="jquery.min.js"></script>
   <script src="bootstrap.min.js"></script>
-
+  <script src="javascriptCode2.js"></script>
 </head>
 <body>
 
@@ -98,18 +94,8 @@ $dbname = "hangman2";
 ?>
 
 
-<script src="javascriptCode2.js"></script>
+
 <script>
-
-//chosing a word in the list
-var wordChosen = '<?php echo $words[$pos]['word']; ?>';
-console.log(wordChosen);
-//defintion of that word chosen
-var wordDefintion = '<?php echo $words[$pos]['definiton']; ?>';
-console.log(wordDefintion);
-
-func(wordChosen);
-func2(wordDefintion);
 
 
 
@@ -168,102 +154,14 @@ func2(wordDefintion);
       </div>
       <p id="nameNeeded"></p>
     Please enter in your <span class="subTitles">name:</span>
-      <form action="page2.php" method="get">
+      <form action="page2.php" method="post">
         <input id="TypedPlayerName" type="text" name="name"/><br/>
-        <input type="submit" name="submit" id="enterGame" onclick="enterGame()"/>
+        <button  id="enterGame" onclick="enterGame()">Enter</button>
       </form>
     </div>
   </div>
 </div> <!-- End of First Page  -->
 
 
-<div id="SecondPage"> <!-- Second Page  -->
-  <!-- Playing Container Area -->
-  <div id="playContainer">
-    <div class="jumbotron text-center">
-      <div id="MainTitle">Hangman</div>
-      <p>by Monika Szucs</p>
-      <p>Hi <span id="PlayerName"></span></p>
-      <div id="MainTitle">
-        Number of Guesses left: <span id="NumberGuesses"></span>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center hangmanArtboard">
-          <div class="alert-message block-message success span6 offset4 hangmanStaticArea">
-            <div id="stand"></div>
-            <div id="headPart"></div>
-            <div id="bodyPart"></div>
-            <div id="leftArm"></div>
-            <div id="rightArm"></div>
-            <div id="leftLeg"></div>
-            <div id="rightLeg"></div>
-          </div>
-
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-
-    <span id="letterGuessingArea">
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center">
-          <p id="findingLetters"></p>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-
-      <div class="row top-buffer">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center ">
-          <span class="subTitles">Word Guess:</span> <input type="text" name="typedWordGuess" id="typedWordGuess">
-            <button id="submitTypedWordGuess" >Submit</button><span id="WordGuessWrong"></span><br>
-
-          <button id="definitonArea" >Hint?</button><br>
-            <span id="hintShown" class="subTitles text-danger"></span>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center">
-          <span class="subTitles">Letter Guess:</span>
-          <p id="wordGuessArea"></p>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-    </span>
-
-    </div>
-  </div> <!-- End of Second Page  -->
-
-  <!-- Game Over Container Area -->
-  <div id="gameOverContainer"> <!-- Game Over Page  -->
-    <div class="jumbotron text-center">
-      <h1>Game Over!</h1>
-      <h2 id="word2"></h2>
-      <div id="definition2"></div>
-      <button id="playAgain">Play again</button>
-    </div>
-  </div> <!-- End of Game Over Page  -->
-
-
-  <!-- Winner Container Area -->
-  <div id="winnerContainer"> <!-- Winner Page  -->
-    <div class="jumbotron text-center">
-      <h1>You Win!</h1>
-      <h2 id="word"></h2>
-      <div id="definition"></div>
-      <button id="restart">Play again</button>
-    </div>
-  </div> <!-- End of Winner Page  -->
-</div>
-
-<script src="javascriptCode2.js"></script>
 </body>
 </html>

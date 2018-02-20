@@ -52,7 +52,7 @@ $dbname = "hangman";
 echo $name;
 
 
-	$check = $conn->prepare("INSERT INTO player (name,score) VALUES ('". $name ."','11')");
+	$check = $conn->prepare("INSERT INTO player (name,score) VALUES ('". $name ."','$score')");
 	$check->execute();
 
 

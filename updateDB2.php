@@ -1,8 +1,8 @@
 <?php
 
 $name = "fail";
-$word = "fail";
-$definition = "fail";
+$myScore = "0";
+
 
 
 if( isset($_POST['name']) )
@@ -14,24 +14,17 @@ if( isset($_POST['name']) )
 
 }
 
-
-if( isset($_POST['word']) )
+if( isset($_POST['myScore']) )
 {
-    $word = $_POST['word'];
-     echo $_POST['word'];
+    $myScore = $_POST['myScore'];
+     echo $_POST['myScore'];
 } else{
   echo "fAILLLLLLLLLLLLLLLLLLLLLLLLLL";
 
 }
 
-if( isset($_POST['definition']) )
-{
-    $definition = $_POST['definition'];
-     echo $_POST['definition'];
-} else{
-  echo "fAILLLLLLLLLLLLLLLLLLLLLLLLLL";
 
-}
+
 
 
 
@@ -49,10 +42,7 @@ $dbname = "hangman2";
 
 
 
-echo "test" . $name;
-
-
-	$check = $conn->prepare("INSERT INTO player (name,score) VALUES ('". $name ."','11')");
+	$check = $conn->prepare("INSERT INTO player (name,score) VALUES ('". $name ."','". $myScore."')");
 	$check->execute();
 
 
