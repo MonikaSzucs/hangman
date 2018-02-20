@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2018 at 05:14 AM
+-- Generation Time: Feb 20, 2018 at 08:46 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -40,20 +40,12 @@ CREATE TABLE `player` (
 --
 
 INSERT INTO `player` (`player_id`, `name`, `score`, `word_id`) VALUES
-(1, 'bbbbbb', '11', 0),
-(9, 'test', '11', 0),
-(10, 'gfgfgfg', '11', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `player_word_table`
---
-
-CREATE TABLE `player_word_table` (
-  `player_id` int(11) NOT NULL,
-  `word_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(40, 'jujujujuj', '60', 0),
+(41, 'jujujujuj', '100', 0),
+(42, 'jujujujuj', '200', 0),
+(43, 'jujujujuj', '130', 0),
+(44, 'Ken', '130', 0),
+(45, 'Ken', '190', 0);
 
 -- --------------------------------------------------------
 
@@ -117,7 +109,7 @@ ALTER TABLE `words_available`
 -- AUTO_INCREMENT for table `player`
 --
 ALTER TABLE `player`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `words_available`
 --
