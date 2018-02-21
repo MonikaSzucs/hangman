@@ -8,6 +8,12 @@ function func2(wordDefinition) {
   var wordDefinition = wordDefinition;
 };
 
+
+
+
+
+
+
 var playContainer = document.getElementById("playContainer");
 var gameOverContainer = document.getElementById("gameOverContainer");
 var winnerContainer = document.getElementById("winnerContainer");
@@ -88,6 +94,9 @@ rightLeg.style.display = "none";
 var score = parseInt(document.getElementById("myScore").value);
 console.log(score);
 
+var scoreShown = document.getElementById("scoreShown");
+
+
 submitTypedWordGuess.addEventListener("click", function() {
   console.log(typedWordGuess.value.toLowerCase());
   console.log(wordChosen);
@@ -103,9 +112,12 @@ submitTypedWordGuess.addEventListener("click", function() {
       winnerContainer.style.display = "block";
       letterGuessingArea.style.display = "none";
 
-
+      score += 50;
+      scoreShown.innerHTML = score;
 
     } else {
+      score -= 50;
+      scoreShown.innerHTML = score;
 
       clicks += 1;
       console.log("clicks " + clicks)
@@ -202,6 +214,7 @@ function updateScore2() {
 }
 
 
+
 id0.addEventListener("click", function() {
   console.log("a");
   id0.style.backgroundColor = "#A9A9A9";
@@ -222,9 +235,11 @@ id0.addEventListener("click", function() {
       console.log("NONE a found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -261,9 +276,11 @@ id1.addEventListener("click", function() {
       console.log("NONE b found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
 
   }
@@ -297,9 +314,11 @@ id2.addEventListener("click", function() {
       console.log("NONE c found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -330,9 +349,11 @@ id3.addEventListener("click", function() {
       console.log("NONE d found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
 
   }
@@ -364,9 +385,11 @@ id4.addEventListener("click", function() {
       console.log("NONE e found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -397,9 +420,11 @@ id5.addEventListener("click", function() {
       console.log("NONE f found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
 
   }
@@ -431,9 +456,11 @@ id6.addEventListener("click", function() {
       console.log("NONE g found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -464,9 +491,11 @@ id7.addEventListener("click", function() {
       console.log("NONE h found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
 
   }
@@ -501,9 +530,11 @@ id8.addEventListener("click", function() {
       console.log("NONE i found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -534,9 +565,11 @@ id9.addEventListener("click", function() {
       console.log("NONE j found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -567,9 +600,11 @@ id10.addEventListener("click", function() {
       console.log("NONE k found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -599,9 +634,11 @@ id11.addEventListener("click", function() {
       console.log("NONE l found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -631,9 +668,11 @@ id12.addEventListener("click", function() {
       console.log("NONE m found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -662,9 +701,11 @@ id13.addEventListener("click", function() {
       console.log("NONE n found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -694,9 +735,11 @@ id14.addEventListener("click", function() {
       console.log("NONE o found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -725,9 +768,11 @@ id15.addEventListener("click", function() {
       console.log("NONE p found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -756,9 +801,11 @@ id16.addEventListener("click", function() {
       console.log("NONE q found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -787,9 +834,11 @@ id17.addEventListener("click", function() {
       console.log("NONE r found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -818,9 +867,11 @@ id18.addEventListener("click", function() {
       console.log("NONE s found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
     clicks += 1;
   }
@@ -850,9 +901,11 @@ id19.addEventListener("click", function() {
       console.log("NONE t found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -881,9 +934,11 @@ id20.addEventListener("click", function() {
       console.log("NONE u found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -912,9 +967,11 @@ id21.addEventListener("click", function() {
       console.log("NONE v found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -943,9 +1000,11 @@ id22.addEventListener("click", function() {
       console.log("NONE w found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -975,9 +1034,11 @@ id23.addEventListener("click", function() {
       console.log("NONE x found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -1006,9 +1067,11 @@ id24.addEventListener("click", function() {
       console.log("NONE y found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
   }
   if (clicks >= 7) {
@@ -1039,9 +1102,11 @@ id25.addEventListener("click", function() {
       console.log("NONE z found");
       score -= 10;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     } else {
       score += 20;
       console.log("score: " + score);
+      scoreShown.innerHTML = score;
     }
 
 

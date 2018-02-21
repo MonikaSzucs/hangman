@@ -117,6 +117,11 @@ func2(wordDefintion);
 
 
 
+
+
+
+
+
       function updateScore() {
         console.log("UPDATE THIS SCORE");
         //Thi Ajax section transfers the name and score that is given to be sent
@@ -161,17 +166,27 @@ func2(wordDefintion);
   <!-- Playing Container Area -->
   <div id="playContainer">
     <div class="jumbotron text-center">
-      <div id="MainTitle">Hangman</div>
-      <p>by Monika Szucs</p>
-      <p>Hi <span id="PlayerName">
-        <?php
-        echo $name;
 
-         ?>
-      </span></p>
-      <div id="MainTitle">
+      <div class="row">
+        <div class="col-sm-2">by Monika Szucs</div>
+        <div id="MainTitle" class="col-sm-8 text-center">Hangman</div>
+        <div class="col-sm-2">Hi: <span id="PlayerName">
+          <?php
+              echo $name;
+           ?>
+        </span></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center h4">Score: <span id="scoreShown"></span></div>
+        <div class="col-sm-2"></div>
+      </div>
+
+      <div class="h2">
         Number of Guesses left: <span id="NumberGuesses"></span>
       </div>
+
     </div>
 
     <div class="container">
@@ -208,8 +223,6 @@ func2(wordDefintion);
           <span class="subTitles">Word Guess:</span> <input type="text" name="typedWordGuess" id="typedWordGuess">
             <button id="submitTypedWordGuess" >Submit</button><span id="WordGuessWrong"></span><br>
 
-          <button id="definitonArea" >Hint?</button><br>
-            <span id="hintShown" class="subTitles text-danger"></span>
         </div>
         <div class="col-sm-2"></div>
       </div>
@@ -230,32 +243,58 @@ func2(wordDefintion);
   <!-- Game Over Container Area -->
   <div id="gameOverContainer"> <!-- Game Over Page  -->
     <div class="jumbotron text-center">
+
+      <div class="jumbotron text-center">
+        <div class="row">
+          <div class="col-sm-2">by Monika Szucs</div>
+          <div id="MainTitle" class="col-sm-8 text-center">Hangman</div>
+          <div class="col-sm-2">Hi: <span id="PlayerName">
+            <?php
+                echo $name;
+             ?>
+          </span></div>
+        </div>
+      </div>
+
       <h1>Game Over!</h1>
       <h2 id="word2"></h2>
       <div id="definition2"></div>
 
-
-      <form method="post" action="http://localhost/hangmanFeb19/hangman/page2.php" class="inline">
+      <form method="post" action="http://localhost/hangmanFeb20/hangman/page2.php" class="inline">
         <input  id="myScore" type="hidden" name="score" value="<?php echo $score?>">
         <button onclick="updateScore2(); updateScore()" id="playAgain" type="submit" name="name" value="<?php echo $name?>" class="link-button">
           Play Again
         </button>
       </form>
 
-
-
     </div>
+
   </div> <!-- End of Game Over Page  -->
+
+
 
 
   <!-- Winner Container Area -->
   <div id="winnerContainer"> <!-- Winner Page  -->
     <div class="jumbotron text-center">
+
+      <div class="jumbotron text-center">
+        <div class="row">
+          <div class="col-sm-2">by Monika Szucs</div>
+          <div id="MainTitle" class="col-sm-8 text-center">Hangman</div>
+          <div class="col-sm-2">Hi: <span id="PlayerName">
+            <?php
+                echo $name;
+             ?>
+          </span></div>
+        </div>
+      </div>
+
       <h1>You Win!</h1>
       <h2 id="word"></h2>
       <div id="definition"></div>
 
-      <form method="post" action="http://localhost/hangmanFeb19/hangman/page2.php" class="inline">
+      <form method="post" action="http://localhost/hangmanFeb20/hangman/page2.php" class="inline">
         <input  id="myScore2" type="hidden" name="score" value="<?php echo $score?>">
         <button onclick="updateScore2(); updateScore()" id="restart" type="submit" name="name" value="<?php echo $name?>" class="link-button">
           Play Again
