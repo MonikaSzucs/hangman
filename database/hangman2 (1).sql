@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2018 at 08:22 AM
+-- Generation Time: Mar 17, 2018 at 02:15 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -40,7 +40,7 @@ CREATE TABLE `player` (
 --
 
 INSERT INTO `player` (`player_id`, `name`, `score`, `word_id`) VALUES
-(66, 'Monika', '20', 0);
+(70, 'MonikaSzucs', '50', 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,7 @@ ALTER TABLE `words_available`
 -- AUTO_INCREMENT for table `player`
 --
 ALTER TABLE `player`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT for table `words_available`
 --
