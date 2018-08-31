@@ -28,7 +28,7 @@ catch(PDOException $e)
     }
 
 
-
+//testing
     // Start the session
     //session_start ();
 
